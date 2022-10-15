@@ -40,10 +40,11 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     'apps.adm',
     'apps.doador',
-    'apps.documento',
+    'apps.documentos',
     'apps.familiar',
     'apps.hospital',
     'apps.tipo_sangue',
+    'apps.provincias',
 ]
 
 MIDDLEWARE = [
@@ -122,6 +123,9 @@ STATICFILES_DIRS = [
     BASE_DIR / 'static'
 ]
 STATIC_ROOT = []
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = 'media '
 
 # Login
 LOGIN_URL = ''
