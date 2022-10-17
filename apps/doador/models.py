@@ -18,4 +18,14 @@ class Doador(models.Model):
     ultimo_log = models.DateTimeField(auto_now=True, verbose_name='Último Login')
 
     def __str__(self):
-        return self.nome
+        return self.nome + ' ' + self.sobrenome
+
+
+class HospitalDoador(models.Model):
+    doador = models.ForeignKey(Doador, on_delete=models.PROTECT)
+    hospital = models.ForeignKey(Hospital, on_delete=models.PROTECT)
+    tipo_sangue = models.ForeignKey(TipoSangue, on_delete=models.PROTECT)
+    ultima_doacao = models.DateField(auto_created=True, auto_now=True)
+
+    def __str__(self):
+        return f'{self.doador} ({self.hospital})'

@@ -1,5 +1,7 @@
 from django.db import models
 from apps.provincias.models import Provincia
+# from apps.doador.models import Doador
+# from apps.tipo_sangue.models import TipoSangue
 
 
 class Hospital(models.Model):
@@ -8,3 +10,5 @@ class Hospital(models.Model):
 
     def __str__(self):
         return f'{self.nome} ({self.provincia})'
+
+
