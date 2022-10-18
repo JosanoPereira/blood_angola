@@ -94,9 +94,7 @@ DATABASES = {
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
-    {
-        "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",
-    },
+    {"NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",},
     {"NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",},
     {"NAME": "django.contrib.auth.password_validation.CommonPasswordValidator",},
     {"NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",},
@@ -128,9 +126,9 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = 'media '
 
 # Login
-LOGIN_URL = ''
-LOGIN_REDIRECT_URL = ''
-LOGOUT_REDIRECT_URL = ''
+LOGIN_URL = 'login'
+LOGIN_REDIRECT_URL = 'password_change'  # quando entrar para o sistema...
+LOGOUT_REDIRECT_URL = 'password_reset'  # quando sair do sistema...
 
 
 # Default primary key field type

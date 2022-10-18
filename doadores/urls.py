@@ -10,4 +10,5 @@ urlpatterns = [
     path('familiar/', include('apps.familiar.urls')),
     path('hospital/', include('apps.hospital.urls')),
     path('tipo_sangue/', include('apps.tipo_sangue.urls')),
+    path('accounts/', include('django.contrib.auth.urls')),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

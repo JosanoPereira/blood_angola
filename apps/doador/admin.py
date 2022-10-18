@@ -4,7 +4,7 @@ from .models import Doador, HospitalDoador
 
 class DoadorAdmin(admin.ModelAdmin):
     list_display = ('nome', 'sobrenome', 'data_nascimento', 'tipo_sangue', 'email',
-                    'telefone', 'provincia', 'hospital', 'ultimo_log')
+                    'telefone', 'provincia', 'hospital', 'ultimo_log', 'id')
     search_fields = ('nome', 'sobrenome')
     list_filter = ('nome', 'sobrenome')
     autocomplete_fields = ('hospital', 'provincia', 'tipo_sangue', 'user')

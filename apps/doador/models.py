@@ -8,11 +8,11 @@ from apps.hospital.models import Hospital
 class Doador(models.Model):
     nome = models.CharField(max_length=150, verbose_name='Primeiro nome')
     sobrenome = models.CharField(max_length=150, verbose_name='Sobrenome')
-    data_nascimento = models.DateTimeField(auto_now=False, auto_now_add=False, verbose_name='Data de Nascimento')
+    data_nascimento = models.DateField(auto_now=False, auto_now_add=False, verbose_name='Data de Nascimento')
     tipo_sangue = models.ForeignKey(TipoSangue, on_delete=models.DO_NOTHING)
     email = models.EmailField(max_length=150, verbose_name='E-mail')
     telefone = models.CharField(max_length=25, verbose_name='Número de Telefone')
-    user = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='Usuário')
+    user = models.OneToOneField(User, on_delete=models.CASCADE, verbose_name='Usuário')
     provincia = models.ForeignKey(Provincia, on_delete=models.DO_NOTHING, verbose_name='Província')
     hospital = models.ForeignKey(Hospital, on_delete=models.DO_NOTHING, verbose_name='Hospital')
     ultimo_log = models.DateTimeField(auto_now=True, verbose_name='Último Login')

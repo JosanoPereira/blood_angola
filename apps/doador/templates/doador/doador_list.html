@@ -1,0 +1,8 @@
+<h1>Doadores</h1>
+<ul>
+{% for doador in object_list %}
+    <li>{{ doador.nome}} - {{ doador.provincia }}</li>
+{% empty %}
+    <li>Sem doadores dessa provincia</li>
+{% endfor %}
+</ul>
